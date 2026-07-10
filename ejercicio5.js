@@ -25,44 +25,26 @@ function Vehiculo(marca, modelo, precio, anio, stock) {
     }
 }
 
-//||------Primer vehiculo------||//
-let marca1 = prompt("Ingrese por favor la marca del primer vehiculo ");
-let modelo1 = prompt("Ingrese por favor el modelo del primer vehiculo ");
-let anio1 = Number(prompt("Ingrese por favor el año del primer vehiculo "));
-let precio1 = Number(prompt("Ingrese por favor el precio del primer vehiculo "));
-let stock1 = Number(prompt("Ingrese por favor el stock primer vehiculo "));
+let vehiculos = [];
+
+for (let i = 0; i < 3; i++) {
+
+    let marca = prompt("Ingrese por favor la marca del vehiculo ");
+    let modelo = prompt("Ingrese por favor el modelo del vehiculo ");
+    let anio = Number(prompt("Ingrese por favor el año del vehiculo "));
+    let precio = Number(prompt("Ingrese por favor el precio del vehiculo "));
+    let stock = Number(prompt("Ingrese por favor el stock vehiculo "));
+
+    let vehiculo = new Vehiculo(marca, modelo, precio, anio, stock);
+    vehiculos.push(vehiculo);
+
+}
 
 
-//||------segundo vehiculo------||//
-let marca2 = prompt("Ingrese por favor la marca del segundo vehiculo ");
-let modelo2 = prompt("Ingrese por favor el modelo del segundo vehiculo ");
-let anio2 = Number(prompt("Ingrese por favor el año del segundo vehiculo "));
-let precio2 = Number(prompt("Ingrese por favor el precio del segundo vehiculo "));
-let stock2 = Number(prompt("Ingrese por favor el stock segundo vehiculo "));
+for (let i = 0; i < vehiculos.length; i++) {
+    console.log(`\n ||------Vehiculo ${i + 1}------ ||`);
+    vehiculos[i].registrarVehiculo();
+    vehiculos[i].venderVehiculo();
+    vehiculos[i].seguro();
 
-
-//||------tercer vehiculo------||//
-let marca3 = prompt("Ingrese por favor la marca del tercer vehiculo ");
-let modelo3 = prompt("Ingrese por favor el modelo del tercer vehiculo ");
-let anio3 = Number(prompt("Ingrese por favor el año del tercer vehiculo "));
-let precio3 = Number(prompt("Ingrese por favor el precio del tercer vehiculo "));
-let stock3 = Number(prompt("Ingrese por favor el stock tercer vehiculo "));
-
-const vehiculo1 = new Vehiculo(marca1, modelo1, precio1, anio1, stock1);
-const vehiculo2 = new Vehiculo(marca2, modelo2, precio2, anio2, stock2);
-const vehiculo3 = new Vehiculo(marca3, modelo3, precio3, anio3, stock3);
-
-console.log("\n ||------Primer vehiculo------ ||")
-vehiculo1.registrarVehiculo();
-vehiculo1.venderVehiculo();
-vehiculo1.seguro();
-
-console.log("\n ||------Segundo vehiculo------ ||")
-vehiculo2.registrarVehiculo();
-vehiculo2.venderVehiculo();
-vehiculo2.seguro();
-
-console.log("\n ||------Tercer vehiculo------ ||")
-vehiculo3.registrarVehiculo();
-vehiculo3.venderVehiculo();
-vehiculo3.seguro();
+}
