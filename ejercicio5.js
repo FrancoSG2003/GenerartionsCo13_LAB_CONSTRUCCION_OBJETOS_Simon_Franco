@@ -8,20 +8,20 @@ function Vehiculo(marca, modelo, precio, anio, stock) {
     this.stock = stock;
 
     this.registrarVehiculo = function() {
-        console.log(`El vehiculo ${this.marca} ${this.modelo} del año ${this.anio} fue registrado correctamente`)
+        console.log(`\n El vehiculo ${this.marca} ${this.modelo} del año ${this.anio} fue registrado correctamente`)
     }
 
     this.venderVehiculo = function() {
         if (this.stock > 0) {
             this.stock = this.stock - 1;
-            console.log(`Se vendio un vehiculo marca: ${this.marca} \n modelo ${this.modelo} \n del año ${this.anio}. Nos quedan ${this.stock} en el concesionario.`)
+            console.log(`\n Se vendio un vehiculo marca: ${this.marca} \n modelo ${this.modelo} \n del año ${this.anio}. Nos quedan ${this.stock} en el concesionario.`)
         } else {
-            console.log(`no hay unidad es disponibles del vehiculo ${this.marca} ${this.modelo} del año${this.anio} actualmente el stock`)
+            console.log(`\n no hay unidad es disponibles del vehiculo ${this.marca} ${this.modelo} del año${this.anio} actualmente el stock`)
         }
     }
 
     this.seguro = function() {
-        console.log(`El vehiculo ${this.marca} ${this.modelo} ${this.anio} puede acceder a un plan de seguro ofrecido por el concesionario`);
+        console.log(`\n El vehiculo ${this.marca} ${this.modelo} ${this.anio} puede acceder a un plan de seguro ofrecido por el concesionario`);
     }
 }
 
